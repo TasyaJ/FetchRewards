@@ -9,7 +9,8 @@ import java.util.Date;
 
 @Entity
 public class Transactions {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String payer;
     private Integer points;
@@ -55,5 +56,15 @@ public class Transactions {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public String toString() {
+        return "Transactions{" +
+                "id=" + id +
+                ", payer='" + payer + '\'' +
+                ", points=" + points +
+                ", timestamp=" + timestamp +
+                '}';
     }
 }

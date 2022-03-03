@@ -7,11 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TransactionsRepository{
+public interface TransactionsRepository extends CrudRepository<Transactions, Long>{
 
-    public List<Transactions> findAll();
 
-    public Transactions get(Long id);
-
-    public boolean save(Transactions transactions);
 }

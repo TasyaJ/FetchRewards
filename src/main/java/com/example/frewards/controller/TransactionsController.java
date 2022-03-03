@@ -5,8 +5,6 @@ import com.example.frewards.repository.TransactionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 public class TransactionsController {
 
@@ -20,9 +18,8 @@ public class TransactionsController {
     }
 
 
-
     @GetMapping("/gettransactions")
-    public List<Transactions> getAll(){
+    public Iterable<Transactions> findAll(){
         return transactionsRepository.findAll();
     }
 
